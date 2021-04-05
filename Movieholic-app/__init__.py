@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 usersData = pd.read_csv("./Movieholic-app/Dataset/updatedRatings.csv")
 userIdList = usersData['userId'].unique()
-tmdb_api = tmdbAPI(debug = False, API_KEY= '673da2e5ce4c2bad166f72d315081927', language ='en-US')
+tmdb_api = tmdbAPI(debug = False, API_KEY= '<YOUR TMDB API KEY>', language ='en-US')
 
 @app.route('/', methods =[ 'POST', 'GET'])
 def login_page():
@@ -111,7 +111,7 @@ class LandingPage:
             )
 
     def get_movieData(self, tmdbId):
-        self.tmdb_api = tmdbAPI(debug = True, API_KEY= '673da2e5ce4c2bad166f72d315081927', language ='en-US')
+        self.tmdb_api = tmdbAPI(debug = True, API_KEY= '<YOUR TMDB API KEY>', language ='en-US')
         return self.tmdb_api.get_info(tmdbId)
 
     def get_landindPageData(self):
