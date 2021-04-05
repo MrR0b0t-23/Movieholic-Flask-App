@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Movieholic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "icon" href = {{ url_for( 'static',filename="Image/icon.svg" )}} type = "image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href={{ url_for( 'static',filename="CreditPage/VideoPageCSS.css")}}>
+</head>
+
+<body>
+   
+    <div class="video-page">
+        <div class="video-page-header">
+                
+            <div class="video-description">
+                <div class="header-left">
+                    <img src= {{contents['profilePath']}}>
+                </div>
+                <div class="header-right">
+                    <h1>{{contents['originalName']}}<br><br><br></h1>
+                    <h2><span>Character Name: {{contents['characterName']}}</span></h2>
+                    
+                    <h2><span>Department : {{contents['department']}}</span></h2>
+                    <h2><span>Date of Birth : {{contents['bDay']}}</span></h2>
+                    <h2><span>Place of Birth : {{contents['bPlace']}}</span></h2>
+                    <p>{{contents['overview']}}</p>
+                    <div class="rating"></div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .video-page .video-page-header:before {
+                content: "";
+                background: url({{contents['profilePath']}});
+                background-size: cover;
+                background-position: center;
+                position: absolute;
+                top: 0;
+                height: 98%;
+                filter: blur(8px);
+                width: 100%;
+                z-index: -1;
+            }
+            
+        </style>
+        
+    </div>
+    <div class="link">
+                
+        <div class="sub-links">
+            <ul>
+                <li><a target="_blank" href="https://medium.com/@imashwins/end-to-end-movie-recommendation-system-python-flask-web-application-azure-deployment-318a59958f1f">How it works</a></li>
+                <li><a target="_blank" href="https://github.com/MrR0b0t-23/Movieholic">Github source code</a></li>
+                <li><a target="_blank" href="https://github.com/MrR0b0t-23/Movieholic/blob/main/LICENSE">License</a></li>
+            </ul>
+        </div>
+        <div class="logos">
+            <ul>
+              <a target="_blank"  href="https://www.linkedin.com/in/ashwin-senthilkumar">
+                <img src={{ url_for( 'static', filename="Image/web.svg" ) }} alt="Logo Image"></a>
+              <a target="_blank"  href="https://www.linkedin.com/in/ashwin-senthilkumar">
+                <img src={{ url_for( 'static', filename="Image/linkedin.svg" ) }} alt="Logo Image"></a>
+              <a target="_blank"  href="https://github.com/MrR0b0t-23">
+                <img src={{ url_for( 'static', filename="Image/github.svg" ) }} alt="Logo Image"></a>
+                <a target="_blank"  href="https://medium.com/@imashwins">
+                <img src={{ url_for( 'static', filename="Image/medium.svg" ) }} alt="Logo Image"></a>
+              <a target="_blank"  href="https://www.instagram.com/_morpheus23_/?igshid=17qo93qn4t6rb">
+                  <img src={{ url_for( 'static', filename="Image/instagram.svg" ) }} alt="Logo Image"></a>
+        </ul>
+        </div>
+      </div>
+      <footer>
+        <p>Copyrights &copy 2021 Movieholic IN, Inc. All rights reserved. </p>
+        <p>Designed and Developed by Ashwin </p> 
+    </footer>
+</body>
+
+</html>
